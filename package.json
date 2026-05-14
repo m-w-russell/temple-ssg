@@ -1,0 +1,14 @@
+{
+  "name": "temple-ssg",
+  "version": "1.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch --onSuccess \"node dist/lib.js\""
+  },
+  "devDependencies": {
+    "@types/node": "^25.7.0",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
+  }
+}

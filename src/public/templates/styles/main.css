@@ -1,0 +1,13 @@
+body {
+    font-family: "Manrope", Arial, Helvetica, sans-serif;
+    background: rgb(247, 247, 247);
+}
+
+.content-wrapper {
+    width: 50%;
+    margin: auto;
+}
+
+@view-transition {
+  navigation: auto;
+}
