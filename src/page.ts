@@ -58,7 +58,7 @@ class Page extends Block {
             hout += cmp.build();
             hout += "\n";
         })
-        const html = this.template({head: hout, title: "Test Page", content: out})
+        const html = this.template({head: hout, title: this.displayName ? this.displayName : this.pageName ? this.pageName : "Temple" , content: out})
 
         writeFileSync(`${this.config.outputPath}/${this.pageName}.html`, html);
         
