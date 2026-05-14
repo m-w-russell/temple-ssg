@@ -1,6 +1,6 @@
 {
   "name": "temple-ssg",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "type": "module",
   "scripts": {
     "build": "tsup",
