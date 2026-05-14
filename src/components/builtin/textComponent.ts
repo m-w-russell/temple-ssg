@@ -37,6 +37,9 @@ class TextComponent extends Component {
             case "subtitle":
                 tag = "h3"
                 break;
+            case "code":
+                tag = "pre"
+                break;
             default:
                 tag = "p"
         }

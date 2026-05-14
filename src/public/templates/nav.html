@@ -2,7 +2,18 @@
     <div class="navbar-title">
         <h1>{{title}}</h1>
     </div>
-    <div >
+    
+    <!-- Hidden checkbox to track the toggle state -->
+    <input type="checkbox" id="navbar-toggle" class="navbar-toggle-checkbox">
+    
+    <!-- Hamburger icon label linked to the checkbox -->
+    <label for="navbar-toggle" class="navbar-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <div class="navbar-menu">
         <ul class="navbar-links">
             {{links}}
         </ul>

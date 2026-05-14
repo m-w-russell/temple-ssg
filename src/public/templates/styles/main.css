@@ -1,18 +1,40 @@
+html {
+    
+    scrollbar-gutter: stable; 
+}
+
+@supports not (scrollbar-gutter: stable) {
+    html {
+        overflow-y: scroll; 
+    }
+}
+
 body {
     font-family: "Manrope", Arial, Helvetica, sans-serif;
     background: rgb(247, 247, 247);
+    margin: 0; 
+    padding: 0;
 }
+
 .container {
-    width: 100vw;
-    /* elements inside won't be affected by scrollbars */
+    width: 100%; 
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box; 
 }
 
 .content-wrapper {
     width: 50%;
     margin: auto;
+    box-sizing: border-box; 
+}
+
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        width: 100%;
+        padding: 0 20px; 
+    }
 }
 
 @view-transition {

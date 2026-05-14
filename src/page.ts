@@ -8,6 +8,8 @@ import { NavComponent } from "./components/builtin/navComponent";
 import { Block } from "./block";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { TextComponent } from "./lib";
+import { ListComponent } from "./components/builtin/listComponent";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -129,6 +131,18 @@ class Page extends Block {
     userStyle(relativePath: string) {
         const s = new StyleComponent(relativePath, `styles`, true);
         this.head(s);
+        return this;
+    }
+
+    code(text: string) {
+        const c = new TextComponent("code", text);
+        this.component(c);
+        return this;
+    }
+
+    list(ordered?: boolean, elements?: string[]) {
+        const l = new ListComponent(ordered, elements);
+        this.component(l);
         return this;
     }
 
