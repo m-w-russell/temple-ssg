@@ -1,6 +1,7 @@
 # Temple
 Temple is a simple, extensible static site generator built on Typescript.
-It allows you to build sites through fluent method chaining, making it easy to get up and running.
+It allows you to build sites through fluent method chaining, making it easy to get up and running.  
+**Docs**: [docs.temple.maxr.nz](https://docs.temple.maxr.nz)
 
 ## Installation
 
