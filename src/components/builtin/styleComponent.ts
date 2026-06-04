@@ -25,7 +25,7 @@ class StyleComponent extends Component {
     }
 
     template = new Template()
-                    .fromText(`<link rel="stylesheet" href="{{path}}/{{name}}" />`)
+                    .fromText(`<link rel="stylesheet" href="/{{path}}/{{name}}" />`)
                     .make({path: "", name: ""})
     
     build(): string {

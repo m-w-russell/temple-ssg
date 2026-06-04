@@ -13,12 +13,10 @@
     padding: 0;
     margin: 0;
     gap: 20px;
-    /* Vertically center the items if they have different heights */
     align-items: center; 
 }
 
 .navbar-link {
-    /* Turns the li into a flex container to center its child anchor */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,8 +26,6 @@
     color: rgb(4, 104, 161);
     font-weight: bold;
     text-decoration: none;
-    
-    /* Core Fix: Centers multi-line wrapped text inside the link bounds */
     text-align: center; 
 }
 

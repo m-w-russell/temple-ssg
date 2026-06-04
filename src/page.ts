@@ -1,5 +1,5 @@
 
-import { copyFileSync, existsSync, mkdirSync, writeFileSync } from "node:fs";
+import { copyFileSync, exists, existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { Component } from "./component";
 import { Template } from "./template";
 import { StyleComponent } from "./components/builtin/styleComponent";
@@ -42,6 +42,8 @@ class Page extends Block {
 
     override build() {
         console.log(`Building ${this.pageName}.html`)
+        const outputImageDir = path.resolve(this.config.outputPath, "image");
+        
         let out = "";
         this.elements.forEach((cmp) => {
             if (cmp.stylesheet) {
@@ -49,6 +51,20 @@ class Page extends Block {
                     this.userStyle(cmp.stylesheet); 
                 } else {
                     this.style(cmp.stylesheet);
+                }
+            }
+
+            if (cmp.componentType && cmp.componentType === "ImageComponent"){
+                if (!cmp.data.isUrl) {
+                    if (!existsSync(outputImageDir)) {
+                        mkdirSync(outputImageDir);
+                    }
+                    
+                    const sourceFile = path.resolve(process.cwd(), cmp.data.src);
+                    const outputFile = path.resolve(outputImageDir, path.basename(cmp.data.src))
+
+                    copyFileSync(sourceFile, outputFile);
+
                 }
             }
             out += cmp.build();
@@ -145,6 +161,8 @@ class Page extends Block {
         this.component(l);
         return this;
     }
+
+    
 
 }
 

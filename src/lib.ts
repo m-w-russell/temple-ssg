@@ -22,6 +22,9 @@ export { NavComponent } from './components/builtin/navComponent'
 export { SectionComponent } from './components/builtin/sectionComponent'
 export { StyleComponent } from './components/builtin/styleComponent'
 export { TextComponent } from './components/builtin/textComponent'
+export { ListComponent } from './components/builtin/listComponent'
+export { ImageComponent } from './components/builtin/imageComponent'
+export { FaviconComponent } from './components/builtin/faviconComponent'
 
 //Useful for building your own components
 export { Component } from './component'

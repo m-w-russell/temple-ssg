@@ -7,6 +7,9 @@ abstract class Component {
     stylesheet?: string;
     isStylesheetExternal: boolean = true; 
 
+    //TODO. This will become mandatory for 1.1.
+    componentType?: ComponentType;
+
     constructor() {
     }
 
